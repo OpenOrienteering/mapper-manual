@@ -4,15 +4,15 @@ layout: default
 {% if page.title != '' %}
 <div class="header">
   <div class="headertitle">
-    <div class="title">{{ page.title }}</div>
+    <h2>{{ page.title }}</h2>
   </div>
 </div>
 {% endif %}
-<div class="contents">
+<article class="contents">
   <div class="textblock">
 {{ content }}
   </div>
-</div>
+</article>
 {% if page.edited != '' %}
 <p><small>Updated on {{ page.edited }}</small></p>
 {% endif %}
