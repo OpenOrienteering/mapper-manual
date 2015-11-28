@@ -1,0 +1,18 @@
+---
+layout: default
+---
+{% if page.title != '' %}
+<div class="header">
+  <div class="headertitle">
+    <div class="title">{{ page.title }}</div>
+  </div>
+</div>
+{% endif %}
+<div class="contents">
+  <div class="textblock">
+{{ content }}
+  </div>
+</div>
+{% if page.edited != '' %}
+<p><small>Updated on {{ page.edited }}</small></p>
+{% endif %}

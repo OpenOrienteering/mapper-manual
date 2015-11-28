@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+{% include head.html %}
+</head>
+<body>
+{% include header.html %}
+<div class="page-content">
+  <div class="wrapper">
+    {{ content | replace:'.md"','.html"' | replace:'.md#','.html#' }}
+  </div>
+</div>
+{% include footer.html %}
+</body>
+</html>
