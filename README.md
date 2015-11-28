@@ -7,7 +7,7 @@ User are encouraged to contribute to this manual on Github.
 
 ## Information for contributors
 
-[Frontpage: index.md](/OpenOrienteering/mapper-manual/blob/gh-pages/pages/index.md)
+[Frontpage: index.md](https://github.com/OpenOrienteering/mapper-manual/blob/gh-pages/pages/index.md)
 
 The manual pages are in Markdown format, with some extensions.
 HTML is supported, too.
