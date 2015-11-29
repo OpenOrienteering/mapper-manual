@@ -1,3 +1,8 @@
+/**
+ * Beware that Qt Assistant (QTextBrowser) supports only a limited set of 
+ * HTML/CSS: http://qt-project.org/doc/qt-5/richtext-html-subset.html
+ */
+
 body {
   max-width: 800px;
   margin: auto;
@@ -6,7 +11,7 @@ body {
 }
 
 #projectlogo {
-  float:right;
+  float: right;
 }
 
 #titlearea {
