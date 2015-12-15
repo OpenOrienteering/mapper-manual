@@ -80,7 +80,7 @@ This can be particularly useful when items (objects, templates) are accidentally
 
 This toolbar will not be shown unless the map has multiple parts.
 
-At the moment, the map parts toolbar has only a signle drop down box for indicating and selecting the active map part.
+At the moment, the map parts toolbar has only a single drop down box for indicating and selecting the active map part.
 
 
 
@@ -274,7 +274,7 @@ If the line describing the hole crosses the boundary of the object, the area out
 
 
 #### ![ ](../mapper-images/tool-rotate.png) Rotate object(s) {#rotate}
-Z
+R
 
 This tool rotates any selected object(s), which can include the whole map, about a selected pivot point and by any angle. Select the item(s) to be rotated using the [point edit tool](#tool_edit_point), then click the rotate tool. 
 
