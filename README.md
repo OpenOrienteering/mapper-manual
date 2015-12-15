@@ -108,6 +108,11 @@ and you add another git remote "mapper" which points to the mapper repository on
    git checkout master
    git pull master
    git subtree pull -P doc/manual/pages --squash mapper manual
+   ~~~
+
+3. Check that Mapper builds without errors for ```doc/manual```. Check the resulting manual. Really do that. Only when everything goes well, push the changes:
+
+   ~~~
    git push
    ~~~
    
