@@ -7,7 +7,7 @@
 {% include header.html %}
 <article class="page-content">
   <div class="wrapper">
-    {{ content | replace:'.md"','.html"' | replace:'.md#','.html#' }}
+    {{ content | replace:'.md"','.html"' | replace:'.md#','.html#' | replace:'tree/gh-pages"', 'blob/gh-pages/_PAGE_PATH_"' | replace:'_PAGE_PATH_',page.path }}
   </div>
 </article>
 {% include footer.html %}
