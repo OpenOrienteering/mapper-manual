@@ -8,6 +8,7 @@ body {
   margin: auto;
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
   box-sizing: border-box;
+  padding: 4px;
 }
 
 #projectlogo {
@@ -36,11 +37,4 @@ a.el {
 
 .textblock img {
   max-width: 100%;
-}
-
-@media (max-width: 640px) {
-  body {
-    padding-left: 4px;
-    padding-right: 4px;
-  }
 }
