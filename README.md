@@ -1,7 +1,7 @@
 # OpenOrienteering Mapper User Manual
 
 This repository is the source of the OpenOrienteering Mapper User Manual.
-It is online at http://openorienteering.github.io/mapper-manual/, and
+It is online at http://www.openorienteering.org/mapper-manual/, and
 it is merged into the released software packages.
 User are encouraged to contribute to this manual on Github.
 
