@@ -68,7 +68,7 @@ The git history is maintained in the mapper master branch, so we can squash all 
    ~~~
    git fetch mapper images
    git checkout master
-   git pull master
+   git pull mapper master
    git subtree split -P images -b images --squash
    git push mapper images:images
    ~~~
@@ -77,7 +77,7 @@ The git history is maintained in the mapper master branch, so we can squash all 
    
    ~~~
    git checkout gh-pages
-   git pull gh-pages
+   git pull origin gh-pages
    git subtree pull -P mapper-images --squash mapper images
    git push
    ~~~
