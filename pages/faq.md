@@ -58,3 +58,8 @@ An Android version is available. It already has a special user interface, but it
 
 ### Will Mapper be available for iPhone / iPad?
 Probably not, due to distribution issues. Technically, a build should be feasible.
+
+## Known Issues
+
+### I am using Mapper on Ubuntu 14.04.  It works, but I cannot see any menus.
+This is a [known issue](https://bugs.launchpad.net/ubuntu/+source/appmenu-qt5/+bug/1307619) with QT menues.  Briefly, several desktops do not provide all the necessary environemnt QT expects to be there.  A workaround is to remove the package *appmenu-qt5*.
