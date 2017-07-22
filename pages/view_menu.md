@@ -26,7 +26,7 @@ Zoom out (shrink) the map to see more of it.
 
 Use this tool to display the whole map on your screen.  
 
-### Set custom zoom factor...
+#### Set custom zoom factor...
 
 Shows a dialog to enter a specific zoom factor. Note that the zoom factor on the screen is not necessarily equal to the printed scale of the map.
 
