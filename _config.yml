@@ -8,6 +8,10 @@ markdown:       kramdown
 exclude:
   - Gemfile
   - README.md
+  - mapper-manual.config
+  - mapper-manual.creator
+  - mapper-manual.files
+  - mapper-manual.includes
 gems:
   - jekyll-redirect-from
 defaults:
