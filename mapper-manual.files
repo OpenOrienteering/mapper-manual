@@ -13,6 +13,7 @@ pages/course_design.md
 pages/edit_menu.md
 pages/faq.md
 pages/file_menu.md
+pages/find_objects.md
 pages/georeferencing.md
 pages/grid.md
 pages/index.md
@@ -27,7 +28,6 @@ pages/settings.md
 pages/symbol_dock_widget.md
 pages/symbol_replace_dialog.md
 pages/symbols_menu.md
-pages/tag_selector.md
 pages/template_adjust.md
 pages/templates-index.md
 pages/templates.md
