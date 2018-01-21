@@ -110,7 +110,7 @@ and you add another git remote "mapper" which points to the mapper repository on
    git subtree pull -P doc/manual/pages --squash origin manual
    ~~~
    
-   Use "Merge updated manual pages subtree" as commit message.
+   Use "doc/manual: Merge updated pages subtree" as commit message.
 
 3. Check that Mapper builds without errors for ```doc/manual```. Check the resulting manual. Really do that. Only when everything goes well, push the changes:
 
