@@ -1,7 +1,7 @@
 # OpenOrienteering Mapper User Manual
 
 This repository is the source of the OpenOrienteering Mapper User Manual.
-It is online at http://www.openorienteering.org/mapper-manual/, and
+It is online at https://www.openorienteering.org/mapper-manual/, and
 it is merged into the released software packages.
 User are encouraged to contribute to this manual on Github.
 
@@ -15,9 +15,9 @@ Pages may be edited directly on Github. Github's online editor even features a p
 
 The manual pages are written in Markdown format, with some extensions.
 HTML is supported, too.
-The manual is published online by means of [Jekyll](http://jekyllrb.com/)
+The manual is published online by means of [Jekyll](https://jekyllrb.com/)
 and offline in the release packages by means of
-[Doxygen](http://www.stack.nl/~dimitri/doxygen/).
+[Doxygen](https://www.stack.nl/~dimitri/doxygen/).
 Only a subset of Markdown, Jekyll and Doxygen features is available for both
 publishing paths.
 
@@ -110,7 +110,7 @@ and you add another git remote "mapper" which points to the mapper repository on
    git subtree pull -P doc/manual/pages --squash origin manual
    ~~~
    
-   Use "Merge updated manual pages subtree" as commit message.
+   Use "doc/manual: Merge updated pages subtree" as commit message.
 
 3. Check that Mapper builds without errors for ```doc/manual```. Check the resulting manual. Really do that. Only when everything goes well, push the changes:
 
