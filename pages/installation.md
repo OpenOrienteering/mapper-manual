@@ -25,7 +25,7 @@ If you are unsure of your CPU type follow these instructions:
 <https://android.gadgethacks.com/how-to/android-basics-see-what-kind-processor-you-have-arm-arm64-x86-0168051/>
 
 
-## macOS
+## Mac OS X
 
 Download the macOS.dmg file.
 
