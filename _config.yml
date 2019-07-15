@@ -1,13 +1,17 @@
 project_name:   OpenOrienteering Mapper
-project_url:    http://openorienteering.org/apps/mapper/
+project_url:    https://www.openorienteering.org/apps/mapper/
 title:          OpenOrienteering Mapper User Manual
 description:    Manual page for the Open Source mapping software
 baseurl:        /mapper-manual
-production_url: http://openorienteering.github.io/mapper-manual
+production_url: https://www.openorienteering.org/mapper-manual
 markdown:       kramdown
 exclude:
   - Gemfile
   - README.md
+  - mapper-manual.config
+  - mapper-manual.creator
+  - mapper-manual.files
+  - mapper-manual.includes
 gems:
   - jekyll-redirect-from
 defaults:

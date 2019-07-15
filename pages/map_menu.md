@@ -3,24 +3,67 @@ title: Map Menu
 authors:
   - Peter Hoban
   - Thomas Schoeps
+  - Kai Pastor
 keywords: Menus
-edited: 26 February 2013
+edited: 20 January 2018
 ---
 
-<table><tr><td width="40"> </td><td width="150"><h4>Georeferencing</h4></td><td width="70"><h4> </h4></td><td width="400">
-<p>Opens the <a href="georeferencing.md">georeferencing dialog</a>. </p> </td></tr>
+#### Georeferencing...
 
-<tr><td width="40"> </td><td width="150"><h4>Configure grid...</h4></td><td width="70"><h4> </h4></td><td width="400">
-<p>Shows the <a href="grid.md">grid configuration dialog</a>.</p></td></tr>
+Opens the [georeferencing dialog](georeferencing.md).
 
-<tr><td width="40"> </td><td width="150"><h4>Change map scale...</h4></td><td width="70"><h4> </h4></td><td width="400">
-<p>Shows a dialog to change the map scale.</p> </td></tr>
 
-<tr><td width="40"> </td><td width="150"><h4>Rotate map...</h4></td><td width="70"><h4> </h4></td><td width="400">
-<p>Shows a dialog to rotate the whole map.</p> </td></tr>
+#### ![ ](../mapper-images/grid.png) Configure grid...
 
-<tr><td width="40"> </td><td width="150"><h4>Map notes...</h4></td><td width="70"><h4> </h4></td><td width="400">
-<p>Shows a text field where any text can be entered which will be saved in the map file, without appearing on the map itself. This can for example be used to store information about map revisions.</p> </td></tr>
+Shows the [grid configuration dialog](grid.md).
 
-</table>
+
+---
+
+#### ![ ](../mapper-images/tool-scale.png) Change map scale...
+
+Shows a dialog to change the map scale.
+
+
+#### ![ ](../mapper-images/tool-rotate.png) Rotate map...
+
+Shows a dialog to rotate the whole map.
+
+
+#### Map notes...
+
+Shows a text field for entering additional text which will be saved in the map file, without appearing on the map itself. This can for example be used to store information about map revisions.
+
+
+---
+
+#### Add new part...
+
+Opens a dialog for entering the name of a new map part which is to be created.
+
+
+#### Rename current part...
+
+ Opens a dialog for changing the name of the current map part.
+
+
+#### Remove current part
+
+Removes the current map part and all objects it contains.
+
+
+#### Move select objects to
+
+Moves the selected objects to another map part.
+
+
+#### Merge this part with
+
+Moves the current part's objects to another map part, and then removes the current map part.
+
+
+#### Merge all parts
+
+Moves all other parts' objects to the current part, and then removes all other map parts.
+
 

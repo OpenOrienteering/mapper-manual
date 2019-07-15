@@ -35,6 +35,10 @@ a.el {
   font-weight: bold;
 }
 
+td img {
+  min-width: 28px;
+}
+
 .textblock img {
   max-width: 100%;
 }
