@@ -336,7 +336,7 @@ less effort to draw these as curved objects from the start).
 
 It is also useful for simplifying overly complex objects, such as raw
 lidar contours.  If you want to preserve the object in the
-original form too, you can first [duplicate](duplicate) it and convert
+original form too, you can first [duplicate](#duplicate) it and convert
 the original into another, normally hidden symbol.
 
 Note that this tool is still experimental and might take some time to compute for a large number of objects.
