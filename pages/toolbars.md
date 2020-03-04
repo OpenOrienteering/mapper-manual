@@ -329,17 +329,16 @@ This tool is useful for making training maps where certain symbols are missing i
 #### ![ ](../mapper-images/tool-convert-to-curves.png) Convert to curves {#convert_to_curves}
 N
 
-This tool changes the shape of selected polygonal objects to
-smooth. It can be used to "prettify" objects which have been drawn as
-polygonal objects but are curved in reality (however, it is usually
-less effort to draw these as curved objects from the start). 
+This tool changes the shape of selected polygonal objects to smooth.
+It can be used to smooth objects which have been drawn or imported as
+polygonal objects but are curved in reality. It is also useful for
+simplifying complex computer-generated objects, such as raw lidar
+contours.
 
-It is also useful for simplifying overly complex objects, such as raw
-lidar contours.  If you want to preserve the object in the
-original form too, you can first [duplicate](#duplicate) it and convert
-the original into another, normally hidden symbol.
-
-Note that this tool is still experimental and might take some time to compute for a large number of objects.
+Note that this tool might take some time to complete for a large number
+of objects, and the results may not match expectations in some cases.
+So drawing curved objects manually can be a fair alternative with
+reasonable effort.
 
 
 #### ![ ](../mapper-images/tool-simplify-path.png) Simplify path {#simplify_path}
