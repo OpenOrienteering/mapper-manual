@@ -52,7 +52,7 @@ operations, there are also undo and redo actions.
 
 #### Erode
 
-This tool remove a small margin from every shape in the image.
+This tool removes a small margin from every shape in the image.
 
 #### Dilate
 
@@ -62,16 +62,20 @@ diagonally but not horizontally or vertically.
 
 #### Thin lines
 
-This tool is used to reduce thick shapes to mimimal lines. It may take some time
-to complete its task, and it is not possible to report progress accurately.
+This tool is used to reduce thick shapes to mimimal skeletons. You will always
+use this tool just before creating the vectors. 
 
-Note that this tool doesn't work perfectly: it may create small artifacts e.g.
-at line ends.
+Note that this tool may take some time to complete its task, and it is not
+possible to report progress accurately.
+
+The algorithm may create line endings which do not accurately match what a human
+would expect, e.g. small forks or arcs. This is normal, but in some cases it may
+negatively affect the result of the "Create vectors" step.
 
 #### Prune
 
 This tool removes pixels from line ends. In that way, it is possible to mitigate
-the artifacts created by the previous step.
+the artifacts created by the previous step if needed.
 
 #### Example
 
