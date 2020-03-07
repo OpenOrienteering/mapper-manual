@@ -9,9 +9,11 @@ User are encouraged to contribute to this manual on Github.
 
 [Frontpage: pages/index.md](https://github.com/OpenOrienteering/mapper-manual/blob/gh-pages/pages/index.md)
 
-Contributors may submit pull requests or ask to be added as a collaborator for this repository.
- 
-Pages may be edited directly on Github. Github's online editor even features a preview.
+This manual uses American English.
+
+Pages may be edited directly on Github. Github's online editor even features a
+preview. Changes must be saved to another branch and submitted by pull requests.
+Pull request are automatically spellchecked.
 
 The manual pages are written in Markdown format, with some extensions.
 HTML is supported, too.

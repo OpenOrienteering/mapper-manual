@@ -1,0 +1,22 @@
+matrix:
+- name: Markdown
+  apsell:
+    mode: none
+  dictionary:
+    wordlists:
+    - wordlist.txt
+    output: wordlist.dic
+    encoding: utf-8
+  pipeline:
+  - pyspelling.filters.markdown:
+      markdown_extensions:
+      - attr_list:
+      - meta:
+      - toc:
+  - pyspelling.filters.html:
+      comments: false
+      ignores:
+      - .no_spell_check
+  - pyspelling.filters.url:
+  sources:
+  - 'pages/*.md'
