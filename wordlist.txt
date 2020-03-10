@@ -92,6 +92,7 @@ osm
 OSM
 Pantone
 Pechacek
+Pecháček
 pgw
 pixelated
 png
