@@ -22,9 +22,9 @@ jobs:
         python -m pip install --upgrade pip setuptools
         python -m pip install pyspelling
         # Install any additional libraries required: additional plugins, documentation building libraries, etc.
-    - name: Install aspell
+    - name: Install hunspell
       run: |
-        sudo apt-get install aspell aspell-en
+        sudo apt-get install hunspell hunspell-en-us
     - name: Spell check
       run: |
-        python -m pyspelling
+        python -m pyspelling --spellchecker hunspell
