@@ -55,6 +55,7 @@ geospatial
 Geospatial
 GeoTIFF
 gif
+GNSS
 gpx
 GPX
 Grivation
