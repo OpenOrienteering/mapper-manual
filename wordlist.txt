@@ -33,6 +33,7 @@ EPSG
 Esc
 et
 exe
+expr
 expr1
 expr2
 F1
