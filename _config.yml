@@ -12,11 +12,42 @@ exclude:
   - mapper-manual.creator
   - mapper-manual.files
   - mapper-manual.includes
-gems:
+plugins:
+  - jekyll-remote-theme
   - jekyll-redirect-from
 defaults:
   -
     scope:
-      path: ""
+      path: "pages"
     values:
-      layout: "page"
+      has_toc: false
+      layout: "page-with-title"
+
+#
+# just-the-docs remote theme settings
+#
+remote_theme:   OpenOrienteering/just-the-docs
+logo:           "/mapper-images/open-orienteering.png"
+search:
+  rel_url: false
+compress_html:
+  ignore:
+    envs: "all"
+
+# Back-to-top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Show `last_modified_date` when it is defined in the frontmatter
+last_edit_timestamp: true
+# Format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
+last_edit_time_format: "%e %B %Y"
+
+# Show "Edit this page on GitHub" link
+gh_edit_link: true
+gh_edit_link_text: "Edit this page on GitHub."
+gh_edit_repository: "https://github.com/OpenOrienteering/mapper-manual"
+gh_edit_branch: "gh-pages" # the branch that your docs is served from
+# gh_edit_source: docs # the source that your files originate from
+gh_edit_view_mode: "tree" # "tree" or "edit"
+

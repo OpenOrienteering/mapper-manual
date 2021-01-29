@@ -1,9 +1,25 @@
-  <meta charset="UTF-8" />
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
   <title>{{ page.title | append: ' | ' | replace: 'User Manual | ', '' }}{{ site.title }}</title>
-  <meta name="description" content="{{ site.description }}" />
-  <meta name="viewport" content="width=device-width initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="{{ "/css/style.css" | prepend: site.baseurl }}" />
-  <link rel="canonical" href="{{ page.url | replace: 'index.html','' | prepend: site.production_url }}" />
-  <link rel="shortcut icon" href="{{ "/mapper-images/mapper-icon/Mapper.ico" | prepend: site.baseurl }}" />
-  <link rel="apple-touch-icon" href="{{ "/mapper-images/mapper-icon/Mapper-256.png" | prepend: site.baseurl }}" />
+
+{% if page.description %}
+  <meta name="Description" content="{{ page.description }}">
+{% else %}
+  <meta name="Description" content="{{ site.description }}">
+{% endif %}
+
+  <link rel="shortcut icon" href="{{ "/mapper-images/mapper-icon/Mapper.ico" | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" href="{{ "/mapper-images/mapper-icon/Mapper-256.png" | prepend: site.baseurl }}">
+
+  <link rel="stylesheet" href="{{ '/assets/css/just-the-docs-default.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/openorienteering.css' | relative_url }}">
+
+{% if site.search_enabled != false %}
+  <script type="text/javascript" src="{{ '/assets/js/vendor/lunr.min.js' | relative_url }}"></script>
+{% endif %}
+  <script type="text/javascript" src="{{ '/assets/js/just-the-docs.js' | relative_url }}"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>

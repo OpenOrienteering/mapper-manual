@@ -1,0 +1,46 @@
+/* Restore more regular appearance */
+
+.side-bar {
+  background-color:#f8f8f8;
+}
+
+.side-bar a {
+  color: #404080;
+}
+
+.side-bar a.site-title {
+  color: #27262b; /* Same as regular h1. */
+}
+
+.main-content a {
+  color: #0000ff;
+  text-decoration: underline;
+}
+
+.main-content a:visited {
+  color: #800080;
+}
+
+.main-content h4 {
+  font-size: 16px !important;
+  font-weight: bolder !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+.main-content h4 img {
+  max-height: 18px;
+}
+
+@media (min-width: 31.25rem) {
+
+  .main-content h4 {
+    font-size: 18px !important;
+  }
+
+  .main-content h4 img {
+    max-height: 20px;
+  }
+
+}
+

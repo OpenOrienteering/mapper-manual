@@ -10,14 +10,17 @@ pages/android-storage.md
 pages/color_dock_widget.md
 pages/colors_symbols.md
 pages/course_design.md
+pages/cove.md
 pages/crt_files.md
 pages/edit_menu.md
 pages/faq.md
 pages/file_menu.md
 pages/find_objects.md
+pages/gdal.md
 pages/georeferencing.md
 pages/grid.md
 pages/index.md
+pages/installation.md
 pages/main_window.md
 pages/map_menu.md
 pages/map_parts.md
@@ -35,28 +38,40 @@ pages/templates.md
 pages/templates_menu.md
 pages/toolbars.md
 pages/tools_menu.md
+pages/touch-mode.md
 pages/view_menu.md
 
 # Images used only by documentation pages
-pages/attachment/scribble_1024.png
-pages/attachment/scribble_2048.png
 pages/images/Android_UI_explanation.png
 pages/images/color_dock_widget.png
 pages/images/color_editor_desktop.png
 pages/images/color_editor_professional.png
 pages/images/course_design.png
+pages/images/cove-img-0.png
+pages/images/cove-img-1.png
+pages/images/cove-img-2.png
+pages/images/cove-img-3.png
+pages/images/cove-starting.png
+pages/images/cove-tab-colors.png
+pages/images/cove-tab-image.png
+pages/images/cove-tab-thinning.png
+pages/images/find_objects.png
 pages/images/georeferencing.png
+pages/images/georeferencing_dialog.png
 pages/images/grid_settings.png
 pages/images/main_window.png
 pages/images/new_map.png
+pages/images/query_editor.png
 pages/images/symbol_dock_widget.png
 pages/images/symbol_dock_widget_menu.png
 pages/images/symbol_replace_dialog.png
+pages/images/tag_editor.png
 pages/images/tag_selector.png
 pages/images/template_adjust.png
 pages/images/template_image_positioning.png
 pages/images/template_setup_window.png
 pages/images/touch_cursor.png
+pages/images/touch-mode-main-window.png
 
 # Images used in Mapper
 mapper-images/about.png
@@ -125,6 +140,7 @@ mapper-images/mapper-icon/mapper-help.xcf
 mapper-images/mapper.png
 mapper-images/minus.png
 mapper-images/move.png
+mapper-images/move-to-gps.png
 mapper-images/new.png
 mapper-images/open-orienteering.png
 mapper-images/open.png
@@ -192,14 +208,15 @@ mapper-images/window-new.png
 # Files needed to generate the online version of the manual
 Gemfile
 _config.yml
-_includes/footer.html
 _includes/head.html
-_includes/header.html
-_layouts/default.html
-_layouts/page.html
-css/style.css
-assets/blacktocat.png
-openorienteering.png
+_includes/title.html
+_layouts/page-with-title.html
+assets/openorienteering.css
+
+# spellchecking
+.pyspelling.yml
+wordlist.txt
 
 # Other files
+.github/workflows/main.yml
 README.md
