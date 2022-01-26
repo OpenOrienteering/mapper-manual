@@ -88,7 +88,7 @@ The Print Tech Test Sheet is designed to demonstrate beneficial over-printing ef
 
 ## Map scales
 
-Map scales are set in accordance with the International Specification for Orienteering Maps (ISOM). The traditional competition format is at 1:15000. More recently maps may be printed at 1:10000 for shorter courses. Maps at 1:10k are visually identical to those at 1:15k. The ISOM emphatically requires that a larger scale 1:10k shall not be used in order to fit more detail onto the map but simply permits the map to be more easily read by older competitors who will generally have shorter courses and not require large maps. Sprint maps made to the ISSOM standard may be at either 1:5000 or 1:4000 and use a different symbol set appropriate to that scale.
+Map scales are set in accordance with the International Specification for Orienteering Maps (ISOM). The traditional competition format is at 1:15000. More recently maps may be printed at 1:10000 for shorter courses. Maps at 1:10k are visually identical to those at 1:15k. The ISOM emphatically requires that a larger scale 1:10k shall not be used in order to fit more detail onto the map but simply permits the map to be more easily read by older competitors who will generally have shorter courses and not require large maps. Sprint maps made to the ISSprOM standard may be at either 1:5000 or 1:4000 and use a different symbol set appropriate to that scale.
 
 Printing of a map prepared at 1:15000 may be at either scale (and conversely a map prepared at 1:10k can be printed at 1:15k) with no loss of accuracy or information. Most course planning software provides for this re-scaling at the point of printing.
 
