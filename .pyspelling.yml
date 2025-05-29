@@ -6,6 +6,12 @@ matrix:
     output: wordlist.dic
     encoding: utf-8
   pipeline:
+  - pyspelling.filters.context:
+      context_visible_first: true
+      delimiters:
+      # Ignore possessive endings
+      - open: '(?<=\w)''s(?!\w)'
+        close: '\b'
   - pyspelling.filters.markdown:
       markdown_extensions:
       - attr_list:
