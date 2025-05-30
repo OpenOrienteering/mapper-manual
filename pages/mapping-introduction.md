@@ -3,7 +3,7 @@ title: Introduction to mapping for orienteering
 author:
   - Thomas Schoeps
   - Kai Pastor
-last_modified_date: 26 January 2022
+last_modified_date: 30 May 2025
 nav_exclude: true
 ---
 
