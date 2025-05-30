@@ -49,7 +49,7 @@ The fieldwork is scanned - about 200dpi is usually quite sufficient resolution -
 
 ## Symbols
 
-Symbols for orienteering maps are prescribed in the [IOF documents](http://orienteering.org/resources/mapping/) ISOM (International Specification for Orienteering Maps), ISSprOM (sprint maps), ISMTBOM (MTBO maps), and ISSkiOM (ski orienteering maps).
+Symbols for orienteering maps are prescribed in the [IOF documents](https://orienteering.sport/iof/mapping/) ISOM (International Specification for Orienteering Maps), ISSprOM (Sprint maps), ISMTBOM (MTBO maps), and ISSkiOM (Ski orienteering maps).
 
 It is very desirable that all orienteering maps should conform to the appropriate standard, and that includes conforming to the standard symbols for the discipline.
 
@@ -71,12 +71,12 @@ With the advent of inexpensive ink-jet printers and high quality printing papers
 
 This tool defines colors in terms of the CMYK system or the RGB system. Default colors for orienteering maps are entered but the colors that are actually printed by a particular printer on a particular paper type can produce a result which is quite different from the PMS color intended.
 
-The IOF Map Commission has prepared an offset printed paper test sheet (Print Tech Test Sheet - available from your national mapping officer) and as a map file *PrintTech test sheet_ver 20190412_ocd11.ocd* (available as download from the [IOF](https://orienteering.sport/iof/mapping/)). The offset printed paper sheet has the currently prescribed colors for the production of maps (Store in a heavy envelope, do not use copies which have been kept loose and may be faded). The colors for a particular printer and paper may be adjusted using the Color Window so that a better match with the offset printed test sheet is achieved. The colors yellow (open space on the terrain) and brown (contour lines) are commonly quite divergent from the standard.
+The IOF Map Commission has prepared an offset printed paper test sheet (IOF Print Test Sheet - available from your national mapping officer) and as a map file *PrintTestSheet_2025_v1.omap* (available as download from the [IOF](https://orienteering.sport/iof/mapping/)). The offset printed paper sheet has the currently prescribed colors for the production of maps (Store in a heavy envelope, do not use copies which have been kept loose and may be faded). The colors for a particular printer and paper may be adjusted using the Color Window so that a better match with the offset printed test sheet is achieved. The colors yellow (open space on the terrain) and brown (contour lines) are commonly quite divergent from the standard.
 
 ### Color adjustment
 
-1. Scan the IOF offset printed Print Tech page in any scanner and use a color picker to get the CMYK values on screen for each color. By way of example this scan may yield CMYK values of 000, .800, .991, .569 respectively for 100% brown.
-2. Load the file *PrintTech test sheet_ver 20190412_ocd11.ocd* into OpenOrienteering Mapper and print the page on your printer. Take this freshly printed page and scan that print on the same scanner and use the same color picker to get the color values you have in the scan. An example of this scan for 100% brown may yield CMYK values of 000, .689, .942, .255 respectively.
+1. Scan the offset printed IOF Print Test Sheet in any scanner and use a color picker to get the CMYK values on screen for each color. By way of example this scan may yield CMYK values of 000, .800, .991, .569 respectively for 100% brown.
+2. Load the file *PrintTestSheet_2025_v1.omap* into OpenOrienteering Mapper and print the page on your printer. Take this freshly printed page and scan that print on the same scanner and use the same color picker to get the color values you have in the scan. An example of this scan for 100% brown may yield CMYK values of 000, .689, .942, .255 respectively.
 3. The difference between those two sets of values will indicate the adjustments required. Using the example values the Color Window line for 100% brown should have no adjustment to the cyan field, +.111 to magenta, +.049 to yellow, and +.314 to black. Those adjustments must be made in the OpenOrienteering Mapper Color Window. Having made similar adjustments for all colors, then run the step 2 print trial again.
 4. In a perfect world the differences will all reduce to zero. In practice they may not because of non-linearities in the hardware and colors like brown are poorly defined on the color palette. Several iterations may be required to get a good match.
 
@@ -84,7 +84,7 @@ The same general approach may be employed but using the RGB color space instead.
 
 When a contour is printed in an area of green on the map the brown of the contour loses contrast and the contour line becomes harder to see.  If the map is offset printed the green is laid down without a gap and the brown is printed over it while the green ink is still wet, with the result that the green and brown blend together where they are coincident. This creates a segment of line which is somewhat darker than the 100% brown line outside the green and the darker color is noted to be easier to see. This very desirable result is called an over-printing effect.
 
-The Print Tech Test Sheet is designed to demonstrate beneficial over-printing effects where these are achieved. Consider the visibility of the wavy contour lines (and blue creek lines) printed against a variety of backgrounds on the lower left of the sheet.
+The Print Test Sheet is designed to demonstrate beneficial over-printing effects where these are achieved. Consider the visibility of the wavy contour lines (and blue creek lines) printed against a variety of backgrounds on the lower left of the sheet.
 
 ## Map scales
 
