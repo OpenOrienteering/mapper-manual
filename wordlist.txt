@@ -72,6 +72,7 @@ ISOM2017
 isotropically
 ISSkiOM
 ISSOM
+ISSprOM
 JPEG2000
 jpg
 JPG
@@ -109,7 +110,7 @@ pixelated
 png
 PNG
 pre
-printtech2006
+PrintTestSheet
 Proj
 PROJ
 repositions
@@ -131,6 +132,7 @@ txt
 UI
 UTM
 v0
+v1
 v7a
 v8a
 vectorization
