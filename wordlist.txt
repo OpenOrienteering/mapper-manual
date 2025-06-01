@@ -77,6 +77,8 @@ JPEG2000
 jpg
 JPG
 Kai
+KML
+KMZ
 Knippers
 Krüger
 Krome
