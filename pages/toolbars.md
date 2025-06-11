@@ -249,12 +249,12 @@ Ctrl+D
 This tool changes the direction of the selected (line) objects, so e.g. dashes of fences or cliffs will be flipped to the other side. Internally, the tool just reverses the coordinates of the path objects.
 
 
-#### ![ ](../mapper-images/tool-connect-paths.png) Connect path {#connect}
+#### ![ ](../mapper-images/tool-connect-paths.png) Connect paths {#connect}
 C
 
 This tool enables two (or more) selected lines to be joined together to create a single line.
 
-It is necessary that the ends to be joined are very close together, otherwise nothing will happen. It may be necessary to adjust the position and direction of the node at the join after connecting the lines.
+It is necessary that the selected lines have the same symbol and that the ends to be joined are very close together, otherwise nothing will happen. It may be necessary to adjust the position and direction of the node at the join after connecting the lines.
 
 
 #### ![ ](../mapper-images/tool-boolean-union.png) Unify areas {#unify_areas}
