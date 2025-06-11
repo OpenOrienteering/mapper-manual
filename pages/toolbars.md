@@ -2,6 +2,7 @@
 title: Toolbars
 authors:
   - Peter Hoban
+  - Matthias Kühlewein
   - Kai Pastor
   - Thomas Schoeps
 keywords: Toolbars
@@ -37,7 +38,7 @@ Ctrl+N
 
 Click to create a new map.
 
-#### ![ ](../mapper-images/open.png) ![ ](../mapper-images/save.png) Open / save map {#open_save_map}
+#### ![ ](../mapper-images/open.png) ![ ](../mapper-images/save.png) Open / Save map {#open_save_map}
 Ctrl+O / Ctrl+S
 
 Click to open/save an existing map.
@@ -47,15 +48,17 @@ Ctrl+P
 
 Click to open the print dialog.
 
-#### ![ ](../mapper-images/cut.png)  ![ ](../mapper-images/copy.png) ![ ](../mapper-images/paste.png) Cut / copy / paste objects {#cut_copy_paste}
+#### ![ ](../mapper-images/cut.png)  ![ ](../mapper-images/copy.png) ![ ](../mapper-images/paste.png) Cut / Copy / Paste objects {#cut_copy_paste}
 Ctrl+X / Ctrl+C / Ctrl+V
 
 Click to cut / copy the currently selected objects to the clipboard, or to paste the clipboard contents into the map (at the center of the view).
 
-#### ![ ](../mapper-images/undo.png) ![ ](../mapper-images/redo.png) Undo / redo object editing {#undo_redo}
+#### ![ ](../mapper-images/undo.png) ![ ](../mapper-images/redo.png) Undo / Redo {#undo_redo}
 Ctrl+Z / Ctrl+Y
 
 Click to undo or redo the last map editing step.
+
+*Note:* Not every action can be undone, e.g., deleting symbols or colors can't be undone.
 
 
 ## View toolbar {#view-toolbar}
@@ -72,7 +75,7 @@ Use this tool to move the map by clicking the map and dragging the mouse.
 
 *Note:* You may always move the map by dragging with middle mouse button, or by using the arrow keys.
 
-#### ![ ](../mapper-images/view-zoom-in.png) ![ ](../mapper-images/view-zoom-out.png) Zoom in / zoom out {#zoom_in_out}
+#### ![ ](../mapper-images/view-zoom-in.png) ![ ](../mapper-images/view-zoom-out.png) Zoom in / Zoom out {#zoom_in_out}
 F7, + / F8, -
 
 Use these actions to zoom in (enlarge) or zoom out (shrink). The center of the view stays at the same position in the map.
@@ -103,7 +106,7 @@ Using this tool, click on the map to select a single object. If the object you w
 
 If only a few objects are selected, the nodes defining these objects become visible. There are different types of nodes:
  - A square stands for a normal node.
- - A diamond depicts a [dash point (see below)](#dash-points).
+ - A diamond depicts a [dash point](#dash-points) (see below).
  - A circle depicts a Bézier curve handle, defining the tangent of a curve point.
 Individual nodes can be dragged with the mouse to change their position. To change the tangent direction of a node on a Bézier curve, click the end of the handle and drag it. Longer handles have greater influence, while shorter handles have only local effect.
 
@@ -153,10 +156,10 @@ To **pick a direction** of an existing object, Ctrl+click the desired object bef
 
 To remove a misplaced point while drawing a line, use the backspace key to **undo** one step at a time, or leave it and correct the position using the [edit objects tool](#tool_edit_point). If the partly drawn line is discovered to be a mistake, use the Esc key to abort and remove it entirely.
 
-##### Closed paths
-To draw a **closed path** (closed contour line, lake, etc.), press the return key to close the last segment of the path to the starting point. When drawing with area symbols, paths are closed automatically. However, there may be an unwanted corner at the start/end point if you just finish the path roughly at the position where you started it, instead of pressing return.
+##### Closed paths {#closed-paths}
+To draw a **closed path** (closed contour line, lake, etc.), press the Return key to close the last segment of the path to the starting point. When drawing with area symbols, paths are closed automatically. However, there may be an unwanted corner at the start/end point if you just finish the path roughly at the position where you started it, instead of pressing Return.
 
-##### Dash points
+##### Dash points {#dash-points}
 Dash points serve different purposes, depending on the symbol on which they are used:
 
 1. For dashed line symbols like small paths it is sometimes useful to be able to steer the positioning of the dashes, e.g. path crossings should preferably be at the center of line dashes. When a dash point is inserted in a line, dashes will be exactly centered on this point.
@@ -211,7 +214,7 @@ Two different types of text objects can be placed with this tool:
 When text is edited, a small window with horizontal and vertical alignment options is shown. To edit text after it is created, choose the [edit objects tool](#tool_edit_point), select the text object, and click again inside the object.
 
 #### ![ ](../mapper-images/pencil.png) Paint on template {#draw_on_template}
-This tool enables the freehand drawing of lines, annotation and erasure on images loaded as [templates](templates.md), in a choice of 8 colors. It is intended for surveying with a mobile computer.
+This tool enables the freehand drawing of lines, annotation and erasure on images loaded as [templates](templates.md), in a choice of 7 colors. It is intended for surveying with a mobile computer.
 
 Click and hold the left mouse button to draw while the mouse is moved. Hold the right mouse button as the mouse is moved to erase. The markup is saved in the template image file **permanently**, so it is good practice to keep a copy of the template file in another place or use a blank transparent image for drawing.
 
@@ -238,7 +241,7 @@ This tool changes the symbols of the selected map objects to another. To use it,
 #### ![ ](../mapper-images/tool-fill-border.png) Fill / Create border {#fill_create_border}
 Ctrl+F
 
-Having drawn a [closed boundary](#drawing-toolbar) which requires a fill (such as a fence containing a thicket), select the boundary on the map (using the [edit objects tool](#tool_edit_point) tool), then choose the required fill symbol in the symbols window. (*Attention:* with default settings, it is not possible to do this the other way round as selecting a map object will select its symbol, so the initial symbol selection is discarded.) A left click on the fill tool will put the chosen fill into the selected boundary.
+Having drawn a [closed boundary](#closed-paths) which requires a fill (such as a fence containing a thicket), select the boundary on the map (using the [edit objects tool](#tool_edit_point) tool), then choose the required fill symbol in the symbols window. (*Attention:* with default settings, it is not possible to do this the other way round as selecting a map object will select its symbol, so the initial symbol selection is discarded.) A left click on the fill tool will put the chosen fill into the selected boundary.
 
 Internally, this tool creates a duplicate of the selected object and assigns it the selected symbol. So, in addition to filling closed boundaries, it is also possible to create a boundary around an area, or create duplicates of lines with another symbol using this tool.
 
@@ -260,7 +263,7 @@ It is necessary that the selected lines have the same symbol and that the ends t
 #### ![ ](../mapper-images/tool-boolean-union.png) Unify areas {#unify_areas}
 U
 
-This tool merges two or more areas (having the same symbol) into one, deleting the overlapping parts. Simply select two or more areas using the [edit objects tool](#tool_edit_point) and then click on the Unify Areas tool to apply it.
+This tool merges two or more areas (having the same symbol) into one, deleting the overlapping parts. Simply select two or more areas using the [edit objects tool](#tool_edit_point) and then click on the Unify areas tool to apply it.
 
 
 #### ![ ](../mapper-images/tool-cut.png) Cut object {#cut_tool}
@@ -270,7 +273,7 @@ This tool cuts a selected existing line or area object into two parts.
 
 To cut **lines**, click at the point where it is desired to break the line. The object will be split into two at this point and both will be selected, so it is possible to insert more cuts after the first. It is also possible to click on a line and drag the mouse along it to remove the marked part completely.
 
-To cut an **area object**, select it and draw a cut line from one side of its boundary to another. Drawing works exactly as with the [draw path tool](#tool_draw_path). It is necessary to start and end the cut line on the boundary of the area to be cut. It is not sufficient to cross the boundary; both ends of the line must be on the boundary within a tolerance of 5 pixels (this may be altered in the [settings dialog](settings.md)). The cut line may contain any number of internal vertices and can be polygonal or curved. The cut occurs immediately when the line is finished on the boundary (with a right click or double click).
+To cut an **area object**, select it and draw a cut line from one side of its boundary to another. Drawing works exactly as with the [draw path tool](#tool_draw_path). It is necessary to start and end the cut line on the boundary of the area to be cut. It is not sufficient to cross the boundary; both ends of the line must be on the boundary within a tolerance of 5 pixels (this may be altered in the [program settings](settings.md)). The cut line may contain any number of internal vertices and can be polygonal or curved. The cut occurs immediately when the line is finished on the boundary (with a right click or double click).
 
 
 #### ![ ](../mapper-images/tool-cut-hole.png) Cut free form hole {#cut_hole}
@@ -280,21 +283,21 @@ This tool cuts a hole into an area object. To do so, first select the object wit
 
 Apart from free form holes, the menu shown by clicking the arrow to the right of this tool offers variants to cut circular or rectangular holes.
 
-If the line describing the hole crosses the boundary of the object, the area outside the former boundary and inside the "hole" will be filled with the area symbol; however, this **must be avoided**! Features such as the unify areas tool or the area measurement will fail for such objects.
+If the line describing the hole crosses the boundary of the object, the area outside the former boundary and inside the "hole" will be filled with the area symbol; however, this **must be avoided**! Features such as the [unify areas tool](#unify_areas) or the [area measurement](#measure) will fail for such objects.
 
 
-#### ![ ](../mapper-images/tool-rotate.png) Rotate object(s) {#rotate}
+#### ![ ](../mapper-images/tool-rotate.png) Rotate objects {#rotate}
 R
 
-This tool rotates any selected object(s), which can include the whole map, about a selected pivot point and by any angle. Select the item(s) to be rotated using the [edit objects tool](#tool_edit_point), then click the rotate tool.
+This tool rotates any selected object(s), which can include the whole map, about a selected pivot point and by any angle. Select the item(s) to be rotated using the [edit objects tool](#tool_edit_point), then click the tool.
 
 The rotation center will be marked with a small circle. Initially it is located at the bounding box midpoint of the selected objects, but it can be set to any position by clicking on the map. Then click somewhere at a convenient radius from the rotation center and move the selected objects about the rotation center to the desired position by dragging the mouse. By holding Ctrl, the rotation angle can be constrained to angles in a fixed stepping.
 
 
-#### ![ ](../mapper-images/tool-rotate-pattern.png) Rotate patterns {#tool_rotate_pattern}
+#### ![ ](../mapper-images/tool-rotate-pattern.png) Rotate pattern {#tool_rotate_pattern}
 This tool has two purposes:
 
- - Setting the orientation of **area symbol patterns**, e.g. forest runnable in one direction.
+ - Setting the orientation of **area symbol patterns**, e.g. vineyard, forest runnable in one direction.
  - Adjusting the orientation of **rotatable point symbols**, e.g. caves, after they have been placed.
 
 To use it, first select the object to be changed with the [edit objects tool](#tool_edit_point), then click the rotate pattern tool. Then click any position on the map and drag the mouse into the desired direction to change the object's pattern to.
@@ -303,7 +306,7 @@ To use it, first select the object to be changed with the [edit objects tool](#t
 #### ![ ](../mapper-images/tool-scale.png) Scale object(s) {#scale}
 Z
 
-This tool scales the selected object(s), which can include the whole map. It works completely analogous to the [rotate tool](#rotate).
+This tool scales the selected object(s), which can include the whole map. It works completely analogous to the [rotate objects tool](#rotate).
 
 
 #### ![ ](../mapper-images/tool-measure.png) Measure lengths and areas {#measure}
@@ -311,7 +314,7 @@ M
 
 This tool can be used to measure line lengths and area sizes. It will show both real world length or area in meters and the resulting length or area on the printed map.
 
-When this tool is activated, a window appears containing the measurements for the selected object. To measure different objects, the selection can be changed using the edit tool while the window is active. It is also possible to draw new paths and have their length or area shown as they are drawn.
+When this tool is activated, a window appears containing the measurements for the selected object. To measure different objects, the selection can be changed using the [edit objects tool](#tool_edit_point) while the window is active. It is also possible to draw new paths and have their length or area shown as they are drawn.
 
 
 ## Advanced drawing toolbar {#advanced-drawing-toolbar}
@@ -319,10 +322,10 @@ When this tool is activated, a window appears containing the measurements for th
 #### ![ ](../mapper-images/tool-clip.png) Clip area {#clip_area}
 This cuts away all objects except inside a given region, making a map excerpt. It can also be used to cut away only a selected subset of objects outside the region. To use it:
 
- - Draw the cutout shape (with any line or area symbol). The shape must be closed, ensure this by finishing the drawing by pressing the return key.
+ - Draw the cutout shape (with any line or area symbol). The shape must be closed, ensure this by finishing the drawing by pressing the Return key.
  - Then select the cutout tool. The shape will be marked in red.
- - For making a cutout of the map, now press the return key.
- - For cutting only some objects, select those objects before pressing return.
+ - For making a cutout of the map, now press the Return key.
+ - For cutting only some objects, select those objects before pressing Return.
 
 
 #### ![ ](../mapper-images/tool-erase.png) Erase area {#erase_area}
