@@ -8,7 +8,7 @@ authors:
 keywords: Toolbars
 parent: Reference
 nav_order: 0.2
-last_modified_date: 10 June 2025
+last_modified_date: 11 June 2025
 to-do:
   - Split this page and update ALL context help in Mapper.
   - Update context help for zoom-in and -out in Mapper.
@@ -58,7 +58,7 @@ Ctrl+Z / Ctrl+Y
 
 Click to undo or redo the last map editing step.
 
-*Note:* Not every action can be undone, e.g., deleting symbols or colors can't be undone.
+*Note:* Not every action can be undone, e.g., changes to colors, symbols or templates can't be reverted.
 
 
 ## View toolbar {#view-toolbar}
@@ -80,7 +80,7 @@ F7, + / F8, -
 
 Use these actions to zoom in (enlarge) or zoom out (shrink). The center of the view stays at the same position in the map.
 
-#### ![ ](../mapper-images/view-box-zoom.png) ![ ](../mapper-images/view-box-zoom.png) Zoom to box {#zoom_to_box}
+#### ![ ](../mapper-images/view-box-zoom.png) Zoom to box {#zoom_to_box}
 Use this tool to zoom to a selectable rectangular area. Left-click and drag to define the box where to zoom to after releasing the mouse button.
 
 #### ![ ](../mapper-images/view-show-all.png) Show whole map {#zoom_all}
@@ -154,7 +154,7 @@ To constrain the **drawing angle**, hold Ctrl while drawing a path. The availabl
 
 To **pick a direction** of an existing object, Ctrl+click the desired object before starting to draw the path. Drawing angles will then be automatically constrained to the picked direction (and its perpendicular directions) until you press the Ctrl key. This is very useful for e.g. drawing parallel houses or hedges/fences in front of houses which are parallel to them.
 
-To remove a misplaced point while drawing a line, use the backspace key to **undo** one step at a time, or leave it and correct the position using the [edit objects tool](#tool_edit_point). If the partly drawn line is discovered to be a mistake, use the Esc key to abort and remove it entirely.
+To remove a misplaced point while drawing a line, use the Backspace key to **undo** one step at a time, or leave it and correct the position using the [edit objects tool](#tool_edit_point). If the partly drawn line is discovered to be a mistake, use the Esc key to abort and remove it entirely.
 
 ##### Closed paths {#closed-paths}
 To draw a **closed path** (closed contour line, lake, etc.), press the Return key to close the last segment of the path to the starting point. When drawing with area symbols, paths are closed automatically. However, there may be an unwanted corner at the start/end point if you just finish the path roughly at the position where you started it, instead of pressing Return.
@@ -166,7 +166,7 @@ Dash points serve different purposes, depending on the symbol on which they are 
 2. For lines with patterns such as fences, it is sometimes useful to be able to steer the positioning of the patterns. When a dash point is inserted in a line with such a pattern, patterns are shifted away from it. This is e.g. useful for corners of a fence to ensure a minimum distance of the dash patterns to the corners.
 3. Some symbols (e.g. 511 Major power line) require bars at some nodes (pylons) but for example not at the point where the line ends at the edge of the map (no pylon). The bar is defined as a dash symbol inside the line symbol for 511 Major power line. It will appear only at dash points along a line.
 
-In general, it is enough to remember that dash points steer the positioning of line dashes, patterns, and dash symbols. When drawing, just try out how it behaves. Dash point nodes have a diamond shape when the line is selected (ordinary nodes are square). Drawing of a node as a dash point is toggled with the space bar: dash points will be drawn while the helpful tip in the status bar at the bottom edge shows "**Dash points on**". This switch may be varied from node to node along the line.
+In general, it is enough to remember that dash points steer the positioning of line dashes, patterns, and dash symbols. When drawing, just try out how it behaves. Dash point nodes have a diamond shape when the line is selected (ordinary nodes are square). Drawing of a node as a dash point is toggled with the Space bar: dash points will be drawn while the helpful tip in the status bar at the bottom edge shows "**Dash points on**". This switch may be varied from node to node along the line.
 
 
 #### ![ ](../mapper-images/draw-circle.png) Draw circles and ellipses {#tool_draw_circle}
@@ -312,7 +312,8 @@ This tool scales the selected object(s), which can include the whole map. It wor
 #### ![ ](../mapper-images/tool-measure.png) Measure lengths and areas {#measure}
 M
 
-This tool can be used to measure line lengths and area sizes. It will show both real world length or area in meters and the resulting length or area on the printed map.
+This tool can be used to measure line lengths and area sizes. It will show both real world length or area in meters and the resulting length or area on the printed map. It will show a
+warning if a line length or area size violates the symbol specific minimum dimensions (if defined for the symbol).
 
 When this tool is activated, a window appears containing the measurements for the selected object. To measure different objects, the selection can be changed using the [edit objects tool](#tool_edit_point) while the window is active. It is also possible to draw new paths and have their length or area shown as they are drawn.
 
