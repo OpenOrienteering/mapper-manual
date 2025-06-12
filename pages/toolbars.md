@@ -230,7 +230,7 @@ This tool deletes the currently selected map object(s).
 #### ![ ](../mapper-images/tool-duplicate.png) Duplicate {#duplicate}
 D
 
-This tool creates a duplicate of each selected map object. Select the object(s), then click the tool to create identical cloned objects in the same place. As the duplicates are created in the same place, the appearance of the map does not immediately change. However, the duplicates can be selected and dragged to another location, leaving the original objects behind. To drag an object, select the [edit objects tool](#tool_edit_point), then click and hold on the enclosing box and drag as required. The duplicate tool is particularly useful when applied to create and move identical groups of items.
+This tool creates a duplicate of each selected map object. Select the object(s), then click the tool to create identical cloned objects at the same place. As the duplicates are created at the same place, the appearance of the map does not immediately change. However, the duplicates can be selected and dragged to another location, leaving the original objects behind. To drag an object, select the [edit objects tool](#tool_edit_point), then click and hold on the enclosing box and drag as required. The duplicate tool is particularly useful when applied to create and move identical groups of items.
 
 
 #### ![ ](../mapper-images/tool-switch-symbol.png) Switch symbol {#switch_symbol}

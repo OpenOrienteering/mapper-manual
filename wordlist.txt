@@ -76,7 +76,6 @@ ISSprOM
 JPEG2000
 jpg
 JPG
-Matthias
 Kai
 KML
 KMZ
@@ -89,6 +88,7 @@ lidar
 linearities
 lossy
 macOS
+Matthias
 MTB
 MTBO
 MTP
