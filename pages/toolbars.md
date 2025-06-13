@@ -106,7 +106,8 @@ Using this tool, click on the map to select a single object. If the object you w
 
 If only a few objects are selected, the nodes defining these objects become visible. There are different types of nodes:
  - A square stands for a normal node.
- - A diamond depicts a [dash point](#dash-points) (see below).
+ - A diamond depicts a [dash point (see below)](#dash-points).
+
  - A circle depicts a Bézier curve handle, defining the tangent of a curve point.
 Individual nodes can be dragged with the mouse to change their position. To change the tangent direction of a node on a Bézier curve, click the end of the handle and drag it. Longer handles have greater influence, while shorter handles have only local effect.
 
