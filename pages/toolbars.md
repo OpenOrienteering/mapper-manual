@@ -8,7 +8,7 @@ authors:
 keywords: Toolbars
 parent: Reference
 nav_order: 0.2
-last_modified_date: 11 June 2025
+last_modified_date: 13 June 2025
 to-do:
   - Split this page and update ALL context help in Mapper.
   - Update context help for zoom-in and -out in Mapper.
@@ -195,7 +195,7 @@ Rectangle objects can be edited like any path. However, consider using the [line
 #### ![ ](../mapper-images/draw-freehand.png) Draw free-handedly {#tool_draw_freehand}
 This tool draws both line and area objects by approximating the path taken by the cursor using straight line segments. To use this tool, click at the starting point, drag the cursor where you want the path to go then release the mouse to finish drawing. The object you have created can be edited in the same way as other line or area objects.
 
-#### ![ ](../mapper-images/tool-fill.png) Fill bounded areas {#tool_fill}
+#### ![ ](../mapper-images/tool-fill.png) Fill bounded areas {#tool_draw_fill}
 F
 
 This tool fills areas of unbroken white space with an area symbol. To use this tool, select the area symbol, then click on white space i.e. any place not already covered by another area object. Internally, this tool first finds all paths, which can belong to many different objects, that form a boundary around the unbroken white space. A new closed shape is created that has the same paths as the white space boundary and is filled with your chosen symbol. Also, if you use this tool with a line symbol selected, then a border around the white space will be created.
@@ -222,7 +222,7 @@ Click and hold the left mouse button to draw while the mouse is moved. Hold the 
 
 ## Editing toolbar {#editing-toolbar}
 
-#### ![ ](../mapper-images/delete.png) Delete {#tool_delete}
+#### ![ ](../mapper-images/delete.png) Delete {#delete}
 Del
 
 This tool deletes the currently selected map object(s).
