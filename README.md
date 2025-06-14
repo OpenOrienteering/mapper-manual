@@ -55,8 +55,13 @@ git clone -b gh-pages https://github.com/OpenOrienteering/mapper-manual.git
 cd mapper-manual
 git remote add mapper https://github.com/OpenOrienteering/mapper.git
 git fetch mapper master
-git branch master mapper/master
 ~~~
+
+The `git subtree` command no longer creates the same history as when we started.
+But it is possible to run the original `git-subtree.sh` script, available at:  
+https://github.com/git/git/raw/refs/tags/v2.17.1/contrib/subtree/git-subtree.sh  
+Put in a place where it is in the PATH for the next steps.
+
 
 ### Merging the images from Mapper to the manual
 
@@ -68,22 +73,31 @@ The git history is maintained in the mapper master branch, so we can squash all 
 1. Split the images out of the mapper master branch into the mapper images branch:
    
    ~~~
-   git fetch mapper images
-   git checkout master
-   git pull mapper master
-   git subtree split -P images -b images --squash
-   git push mapper images:images
+   git fetch mapper master
+   git checkout mapper/master
+   git-subtree.sh split -P images
    ~~~
    
-2. Pull the images into the mapper-images subtree of the mapper-manual gh-pages branch:
+   The last command will print a git commit ID `<sha>` which can be used
+   to create local or remote branches, or to access the commits directly.
+   
+2. Merge the images into the mapper-images subtree of the mapper-manual gh-pages branch:
    
    ~~~
-   git checkout gh-pages
-   git pull origin gh-pages
-   git subtree pull -P mapper-images --squash mapper images
-   git push
+   git fetch origin gh-pages
+   git checkout origin/gh-pages
+   git-subtree.sh merge -P mapper-images --squash <sha>
    ~~~
    
+3. You can push the changes to your fork of the mapper-manual repository
+   
+   ~~~
+   git push <your-remote> HEAD:refs/heads/update-pages
+   ~~~
+   
+   When everything is ready, open a pull request in the manual repository of Mapper.
+   Use title "Merge updated mapper-images".
+
 ### Merging the pages from the manual repository to Mapper
 
 The contents of the manual are maintained in the pages directory of this repository.
@@ -95,28 +109,34 @@ The following assumes that you are working in the mapper-manual repository
 (i.e. git remote "origin" points to the mapper-manual repository on Github),
 and you add another git remote "mapper" which points to the mapper repository on Github.
 
-1. Push the pages out of this repository's gh-pages branch into the mapper manual branch:
+1. Split the pages out of this repository's gh-pages branch into the mapper manual branch:
    
    ~~~
-   git fetch mapper manual
-   git checkout gh-pages
-   git pull
-   git subtree push -P pages --squash mapper manual
+   git fetch origin gh-pages
+   git checkout origin/gh-pages
+   git-subtree.sh split -P pages
    ~~~
    
-2. Pull the pages into the doc/manual/pages subtree of the mapper master branch:
+   The last command will print a git commit ID `<sha>` which can be used
+   to create local or remote branches, or to access the commits directly.
+   
+2. Merge the pages into the doc/manual/pages subtree of the mapper master branch.
    
    ~~~
-   git checkout master
-   git pull
-   git subtree pull -P doc/manual/pages --squash origin manual
+   git fetch mapper master
+   git checkout mapper/master
+   git-subtree.sh merge -P doc/manual/pages --squash <sha>
    ~~~
    
-   Use "doc/manual: Merge updated pages subtree" as commit message.
+3. You can push the changes to your fork of the mapper repository
+   
+   ~~~
+   git push <your-remote> HEAD:refs/heads/update-pages
+   ~~~
+   
+4. Integrate the changes in a local build, and check that Mapper builds without errors
+   for ```doc/manual```.  Check the resulting manual. Really do that.
 
-3. Check that Mapper builds without errors for ```doc/manual```. Check the resulting manual. Really do that. Only when everything goes well, push the changes:
+5. When everything is ready, open a pull request in the main repository of Mapper.
+   Use title "doc/manual: Merge updated manual pages".
 
-   ~~~
-   git push
-   ~~~
-   
