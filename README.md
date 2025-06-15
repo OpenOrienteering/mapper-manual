@@ -19,7 +19,7 @@ The manual pages are written in Markdown format, with some extensions.
 HTML is supported, too.
 The manual is published online by means of [Jekyll](https://jekyllrb.com/)
 and offline in the release packages by means of
-[Doxygen](https://www.stack.nl/~dimitri/doxygen/).
+[Doxygen](https://www.doxygen.nl/).
 Only a subset of Markdown, Jekyll and Doxygen features is available for both
 publishing paths.
 
