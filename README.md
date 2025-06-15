@@ -60,7 +60,7 @@ git fetch mapper master
 The `git subtree` command no longer creates the same history as when we started.
 But it is possible to run the original `git-subtree.sh` script, available at:  
 https://github.com/git/git/raw/refs/tags/v2.17.1/contrib/subtree/git-subtree.sh  
-Put in a place where it is in the PATH for the next steps.
+The following steps assume that this script in a place where it is found via the PATH environment variable.
 
 
 ### Merging the images from Mapper to the manual
