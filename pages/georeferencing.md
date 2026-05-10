@@ -22,7 +22,7 @@ last_modified_date: 8 May 2026
 
 Georeferencing of a map is the best way for aligning templates (such as base maps or aerial imagery) and GPS tracks. In short, to georeference a map means to establish a known relationship between the paper coordinates of the map and the coordinates of a geographic coordinate reference system. This way, data which is known in a geographic coordinate reference system (such as GPS coordinates) can be transformed to map coordinates and thus displayed on the map, and vice versa the map can be transformed to geographic coordinates and e.g. be displayed on a world map. More information is available on [Wikipedia](https://en.wikipedia.org/wiki/Georeferencing).
 
-To georeference a map, Mapper associates its points with latitude-longitude coordinate values based on the standard WGS85 or similar datum. The user draws on a “canvas” to define a paper map which is
+To georeference a map, Mapper associates its points with latitude-longitude coordinate values based on the standard WGS84 or similar datum. The user draws on a “canvas” to define a paper map which is
 
  - reduced by a *scale factor* from the real-world units of meters to a paper grid measured in millimeters,
  - reoriented by a *declination angle* from the datum’s geographic north so that magnetic north is “up” on the paper, and
@@ -124,7 +124,7 @@ Mapper obtains the angle difference between grid north and geographic north.
 
 - `grivation = declination - convergence`
 
-Grivation is the direction of megnetic north measured as an azimuth on the grid.
+Grivation is the direction of magnetic north measured as an azimuth on the grid.
 Grivation determines the rotation which turns the projected grid so that magnetic north is at the top of the map. This rotation is the only effect of the declination setting.
 
 Grivation is short for “grid variation”.
@@ -210,7 +210,7 @@ In the **Declination** field the angle between true north and magnetic north at 
 
 Grivation, defined above, is displayed for information purposes.
 
-When the user changes the declination, a question pops up: “Do you want to rotate the map content accordingly, too?” Supposing the map is already well-georeferenced, click “Yes” to preserve the good georferencing. Clicking “No” would leave the drawn map as is, but rotate the geographical positions of all the map content.
+When the user changes the declination, a question pops up: “Do you want to rotate the map content accordingly, too?” Supposing the map is already well-georeferenced, click “Yes” to preserve the good georeferencing. Clicking “No” would leave the drawn map as is, but rotate the geographical positions of all the map content.
 
 #### Scale compensation
 
@@ -218,7 +218,7 @@ When the user changes the declination, a question pops up: “Do you want to rot
 
 Grid scale factor, defined above, is displayed for information purposes.
 
-When the user changes the auxiliary scale factor, a question pops up: “The scale factor has been changed. Do you want to stretch/shrink the map content accordingly, too?” Supposing the map is already well-georeferenced, click “Yes” to preserve the good georferencing. Clicking “No” would leave the drawn map as is, but rotate the geographical positions of all the map content.
+When the user changes the auxiliary scale factor, a question pops up: “The scale factor has been changed. Do you want to stretch/shrink the map content accordingly, too?” Supposing the map is already well-georeferenced, click “Yes” to preserve the good georeferencing. Clicking “No” would leave the drawn map as is, but rotate the geographical positions of all the map content.
 
 ### Related functions
 
@@ -240,7 +240,7 @@ The (mouse) cursor position of the map editor can be displayed in map coordinate
 
 A map is **georeferenced** if it is associated with a mathematical transformation between its internal (map coordinate system and a ground system of geographic coordinates. The geographic coordinate system often is provided by naming a standard datum.
 
-Orienteering maps, being two-dimensional, encounter height considerations separately from latitude/longitude, etc. Height is generally measured relative to a **geoid**, a standard surface of approximately equal gravitatational potential. The geoid is defined relative to a datum’s ellipsoid. As an example, for NAVD88, Geoid 12B (for East Tennessee and its LiDAR data) is about 30 meters beneath the ellipsoid. **Orthometric height** is the term for height above the geoid. **Ellipsoidal height** arises in simpler 3D coordinate systems. A **vertical datum** is the reference surface for measuring height, whether geoid or ellipsoid.
+Orienteering maps, being two-dimensional, encounter height considerations separately from latitude/longitude, etc. Height is generally measured relative to a **geoid**, a standard surface of approximately equal gravitational potential. The geoid is defined relative to a datum’s ellipsoid. As an example, for NAVD88, Geoid 12B (for East Tennessee and its lidar data) is about 30 meters beneath the ellipsoid. **Orthometric height** is the term for height above the geoid. **Ellipsoidal height** arises in simpler 3-D coordinate systems. A **vertical datum** is the reference surface for measuring height, whether geoid or ellipsoid.
 
 ### Further reading
 
