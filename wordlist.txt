@@ -1,4 +1,5 @@
 10k
+12B
 15k
 200dpi
 500m
@@ -15,9 +16,13 @@ bmp
 boolean
 Bézier
 capacitive
+checkbox
+checkboxes
 CMYK
 CoVe
 CPUs
+CRS
+CRSes
 crt
 Ctrl
 dimensionally
@@ -28,6 +33,7 @@ doxygen
 dxf
 DXF
 easting
+eastings
 Easting
 EPSG
 Esc
@@ -56,6 +62,7 @@ geospatial
 Geospatial
 GeoTIFF
 gif
+GIS
 GNSS
 gpx
 GPX
@@ -73,6 +80,7 @@ isotropically
 ISSkiOM
 ISSOM
 ISSprOM
+ITRF
 JPEG2000
 jpg
 JPG
@@ -92,8 +100,11 @@ Matthias
 MTB
 MTBO
 MTP
+NATRF2022
 nav
+NAVD88
 northing
+northings
 OCAD
 ocd
 OCD
@@ -104,6 +115,7 @@ openorienteering
 OpenOrienteering
 OpenStreetMap
 orienteers
+orthometric
 osm
 OSM
 Pantone
@@ -130,10 +142,12 @@ Schoeps
 Schöps
 SHP
 Simons
+SRID
 subqueries
 TOC
 txt
 UI
+unprojected
 UTM
 v0
 v1
@@ -144,6 +158,8 @@ Vectorization
 vectorizer
 Vectorizer
 Vectorizing
+WGS
+WGS84
 wld
 x32
 x64
