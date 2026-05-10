@@ -23,8 +23,10 @@ CoVe
 CPUs
 CRS
 CRSes
+CRS’s
 crt
 Ctrl
+datums
 dimensionally
 dmg
 DMS
