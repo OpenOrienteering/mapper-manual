@@ -130,7 +130,7 @@ Note that because the projected system is flattened from a spheroid, measures of
 
 The projected coordinate system provides a flat, two-dimensional space, upon which the features of the Earth’s surface can be represented. Universal Transverse Mercator (UTM) for a specific zone would be an example.
 
-Mapper takes into account that the grid does not align perfectly with the ellipsoid in either orientation or scale. From the projection, it determines the discrepancies. As they can vary slightly across the map, Mapper analyzes them at the reference point. The disrepancies are:
+Mapper takes into account that the grid does not align perfectly with the ellipsoid in either orientation or scale. From the projection, it determines the discrepancies. As they can vary slightly across the map, Mapper analyzes them at the reference point. The discrepancies are:
 
  - **Convergence** is the direction of grid north, measured in degrees. It increases clockwise, like a geographic azimuth. To transform a geographic azimuth to a grid azimuth, Mapper subtracts the convergence.
  - **Grid scale factor** is the size of an ellipsoid meter on the grid (grid units per ellipsoid unit). To transform a distance in ellipsoid meters to a grid distance, Mapper multiplies by the grid scale factor.
@@ -138,8 +138,8 @@ Mapper takes into account that the grid does not align perfectly with the ellips
 As mentioned above, to find the geographic coordinates from map coordinates, Mapper calculates the result of a motion which goes from the reference point, in the direction of an azimuth on the ellipsoid, for a distance in ellipsoid meters. By adjusting for the convergence and grid scale factor, Mapper performs this motion on the grid, with the flatness making the calculation straightforward. The method is:
 
  1. Use the CRS to convert the geographical reference point to grid (projected) coordinates.
- 2. From the azimuth on the ellipoid, subtract the convergence to get the grid azimuth.
- 3. Multiply the distince in ellipsoid meters by the grid scale factor to get the grid distance.
+ 2. From the azimuth on the ellipsoid, subtract the convergence to get the grid azimuth.
+ 3. Multiply the distance in ellipsoid meters by the grid scale factor to get the grid distance.
  4. Starting from the grid reference point, find the point on the grid along the calculated azimuth, at the calculated distance.
  5. Use the CRS to convert the calculated point from grid (projected) coordinates to geographic coordinates.
 
