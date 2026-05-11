@@ -87,79 +87,98 @@ The map’s **scale** is primary. It is the ratio of distance on the ground to d
 
 The **auxiliary scale factor** influences the transformation of map coordinates to geographic coordinates. It is also known as elevation factor or orthometric height factor. The auxiliary scale factor is typically 1.0, having no effect. However, for a map at the altitude of 1,800 meters above the ellipsoid, where the auxiliary scale factor is 0.9997, it would make a slight difference. It is the ratio between the size of a degree on the ellipsoid surface and the size of a degree at ground level.
 
+#### Latitude/longitude calculation details
+
+Each map object has a one or more x,y positions. An object’s geographic coordinates are calculated as needed. The calculation is determined by the map’s georeferencing parameters.
+
+**Scale denominator** is Mapper’s internal representation of the scale. For example, in a map with scale 1:5,000, the scale could be represented by the fraction 1/5,000. Its scale denominator is 5,000.
+
+To calculate the geographic coordinates of a point on the map,
+
+ 1. Start with the given point’s distance on the map from the reference point, in millimeters.
+ 2. Divide the distance by 1000, yielding distance on the map, in meters.
+ 3. Multiply by the map scale denominator, yielding distance in real world meters.
+ 4. Multiply by the auxiliary scale factor, yielding distance in ellipsoid meters.  
+Have distance.
+ 5. Start with the given point’s (magnetic) azimuth from the reference point, on the map.
+ 6. Add the declination, yielding azimuth on the ellipsoid from the reference point to the given point.  
+Have azimuth.
+ 7. Start at the reference point on the datum’s ellipsoid.
+ 8. Move from there in the direction of the geographical azimuth, for the calculated distance.
+ 9. Where movement ends, capture the latitude/longitude.
+
+The just-mentioned motion along the ellipsoid can be calculated in many ways, with various results. With Mapper, the user determines the calculation by choosing a coordinate reference system (CRS), explained in the next section.
+
 ### Coordinate Reference System (CRS)
 
-Whenever Mapper sets up georeferencing for a map or template, it uses a **coordinate reference system (CRS)** to define the **projection** between the curved ellipsoid and a flat, rectangular coordinate system. In general, a CRS is a coordinate-based system used to locate geographic entities. It defines a specific map projection and a transformation from/to geographic coordinates. Standard CRSes can be referred to using a SRID integer, including EPSG codes.
-
-Do not confuse “CRS” with “coordinate system”. The former is more standardized and has a projection that relates it to a datum.
+Whenever Mapper sets up georeferencing for a map or template, it uses a **coordinate reference system (CRS)** to define the **projection** between the curved ellipsoid and a flat, rectangular coordinate system. In general, a CRS is a coordinate-based system used to locate geographic entities. It defines a specific map projection and a transformation from/to geographic coordinates. Standard CRSes can be referred to using an SRID integer, including EPSG codes.
 
 Each CRS used by Mapper
 
  - is based on a specific *datum*
  - defines a projection between the datum’s ellipsoid (geographic coordinates) and a two-dimensional grid
- - uses a pair called **projected coordinates** for a point in the grid
- - calls the two grid coordinates Easting and Northing
- - measures Easting and Northing values in meters
-
-With Mapper, the term **grid** usually refers to the CRS’s projected coordinate system (although map coordinates and geographic coordinates could also be considered as grids). The Easting and Northing coordinates of a point are called **projected coordinates**.
+ - uses a pair called **projected coordinates** for a point in the grid, the two coordinates being **easting** and **northing**
+ - measures easting and northing values in meters
 
 Coordinates, as northings and eastings, are said to be *projected* because they define positions on a (flat) plane – they have been “thrown forth” (projected), from a spheroid.
 
-Note that because the projected system is flattened from a spheroid, its meters are nominal meters that vary a little from exact meters on the spheroid. Similarly, easting and northing may be oriented at an angle from geographic east and north.
+With Mapper, the term **grid** usually refers to the CRS’s projected coordinate system (although map coordinates and geographic coordinates could also be considered as grids). Some coordinate systems have no projection, and so are not part of a CRS.
 
-A spatial reference system identifier (**SRID**) is typically associated with a string description of the datum, geoid, coordinate system, and map projection.
+Note that because the projected system is flattened from a spheroid, measures of objects projected to the grid differ slightly from meters on the spheroid. Similarly, easting and northing may be oriented at a slight angle from geographic east and north.
 
-#### Why projected coordinates
+#### Calculating with projected coordinates
 
-Projected coordinates are an intermediate stage in transformations between map coordinates and geographic coordinates. Conversions between map coordinates and projected coordinates are made as a similarity transform determined by map scale, auxiliary scale factor, declination, and the reference point. Conversions between projected coordinates and geographic coordinates are made based on the map’s specified CRS. The actual geographic transformation is done by the PROJ library. 
+The projected coordinate system provides a flat, two-dimensional space, upon which the features of the Earth’s surface can be represented. Universal Transverse Mercator (UTM) for a specific zone would be an example.
 
-The projected coordinate system provides a flat, two-dimensional space, upon which the features of the Earth’s surface can be represented. For example, Universal Transverse Mercator (UTM) for a specific zone. Projected coordinates are a basis for the map. Mapper calculates a correspondence between figures drawn in the map’s coordinate system, and shapes in the projected coordinate system. This keeps shapes unchanged, while allowing the map to be oriented, scaled, and cropped freely.
+Mapper takes into account that the grid does not align perfectly with the ellipsoid in either orientation or scale. From the projection, it determines the discrepancies. As they can vary slightly across the map, Mapper analyzes them at the reference point. The disrepancies are:
 
-#### Grid orientation
+ - **Convergence** is the direction of grid north, measured in degrees. It increases clockwise, like a geographic azimuth. To transform a geographic azimuth to a grid azimuth, Mapper subtracts the convergence.
+ - **Grid scale factor** is the size of an ellipsoid meter on the grid (grid units per ellipsoid unit). To transform a distance in ellipsoid meters to a grid distance, Mapper multiplies by the grid scale factor.
 
-Mapper takes into account that the grid does not align perfectly with the ellipsoid in either orientation or scale. From the projection, it determines the discrepancies. As they can vary slightly across the map, Mapper analyzes them at the reference point. It compensates for them when transforming between map coordinates and projected coordinates, in all georeferencing calculations.
+As mentioned above, to find the geographic coordinates from map coordinates, Mapper calculates the result of a motion which goes from the reference point, in the direction of an azimuth on the ellipsoid, for a distance in ellipsoid meters. By adjusting for the convergence and grid scale factor, Mapper performs this motion on the grid, with the flatness making the calculation straightforward. The method is:
 
-Mapper obtains the angle difference between grid north and geographic north.
-**Convergence** is the direction of grid north, measured in degrees. It increases clockwise, like a geographic azimuth. To transform a map azimuth to a grid azimuth, Mapper needs to add the declination to get geographic azimuth, then subtract the convergence. To do this in one step, it calculates **grivation**:
+ 1. Use the CRS to convert the geographical reference point to grid (projected) coordinates.
+ 2. From the azimuth on the ellipoid, subtract the convergence to get the grid azimuth.
+ 3. Multiply the distince in ellipsoid meters by the grid scale factor to get the grid distance.
+ 4. Starting from the grid reference point, find the point on the grid along the calculated azimuth, at the calculated distance.
+ 5. Use the CRS to convert the calculated point from grid (projected) coordinates to geographic coordinates.
 
-- `grivation = declination - convergence`
+Mapper uses the PROJ library to perform the CRS transformation to and from geographic coordinates.
 
-Grivation is the direction of magnetic north measured as an azimuth on the grid.
-Grivation determines the rotation which turns the projected grid so that magnetic north is at the top of the map. This rotation is the only effect of the declination setting.
+### Direct transformation between map and projected coordinates
+
+Note that in the above procedure, map coordinates were first transformed to projected coordinates before being converted to geographic coordinates. The first transformation involves several scale and angle operations. That same combination of transformations, when applied to all the map coordinates in a figure or object, leaves the shape unchanged. For that reason, the transformation between map and projected coordinates is called a _similarity transformation_.
+
+In the georeferencing calculation, the addition of declination is always followed by subtraction of the convergence.
+Similarly, the multiplication by auxiliary scale factor and grid scale factor always occur together. These combinations are useful and meaningful, so they have names.
+
+- `grivation = declination − convergence`
+
+**Grivation** is the direction of magnetic north measured as an azimuth on the grid.
+Grivation indicates the angle between the projected grid and magnetic north at the top of the map. The declination setting has no other visible effect.
 
 Grivation is short for “grid variation”.
 
-#### Grid scale
+ - `combined_scale_factor = auxiliary_scale_factor × grid_scale_factor`
 
-From the CRS, Mapper obtains the scale proportion between grid meters and ellipsoid meters, at the reference point.
-The **grid scale factor** is the size of an ellipsoid meter on the grid (grid units per ellipsoid unit). To transform a map distance to a grid distance, Mapper needs to multiply by the scale denominator, by the auxiliary scale factor, and by the grid scale factor. To eliminate one step, it calculates **combined scale factor**:
+**Combined scale factor** is the ratio between length in projected coordinates and the length on the ground.
 
- - `combined_scale_factor = auxiliary_scale_factor * grid_scale_factor`
+#### Combined latitude/longitude calculation details
 
-Combined scale factor is the ratio between length in projected coordinates and the length on the ground.
-
-#### Latitude/longitude calculation details
-
-Each map object has a one or more x,y positions. An object’s geographic coordinates are calculated as needed. The calculation is determined by the map’s georeferencing parameters.
-
-**Scale denominator** is Mapper’s internal representation of the scale. For example, in a map with scale 1:5,000, the scale could be represented by the fraction 1/5,000., Its scale denominator is 5,000.
+Using these combinations, along with the fact that the projected reference point need not be re-calculated every time, makes the georeferencing calculation a bit smaller.
 
 To calculate the geographic coordinates of a point on the map,
 
- - Start with the given point’s distance on the map from the reference point, in millimeters.
- - Divide the distance by 1000, yielding distance on the map, in meters.
- - Multiply by the map scale denominator, yielding distance in real world meters.
- - Multiply by the combined scale factor, yielding the distance on the projected grid (in meters).
-
-Having distance, continue and calculate azimuth,
- 
- - Start with the given point’s (magnetic) azimuth from the reference point, on the map.
- - Add the grivation, yielding grid azimuth from the reference point.
-
-Having distance and azimuth, find latitude/longitude
- 
- - In the projected coordinate system, from the reference point, along the line defined by the azimuth, find the point at the calculated distance.
- - Use the CRS to transform (Easting, Northing) to (latitude, longitude).
+ 1. Start with the given point’s distance on the map from the reference point, in millimeters.
+ 2. Divide the distance by 1000, yielding distance on the map, in meters.
+ 3. Multiply by the map scale denominator, yielding distance in real world meters.
+ 4. Multiply by the combined scale factor, yielding the grid distance.  
+    Have distance.
+ 5. Start with the given point’s (magnetic) azimuth from the reference point, on the map.
+ 6. Add the grivation, yielding grid azimuth from the reference point.  
+    Have azimuth.
+ 7. Starting from the grid reference point, find the point on the grid along the calculated azimuth, at the calculated distance.
+ 8. Use the CRS to transform (easting, northing) to (latitude, longitude).
 
 ### Georeferencing dialog
 
@@ -239,6 +258,8 @@ The (mouse) cursor position of the map editor can be displayed in map coordinate
 ### Glossary
 
 A map is **georeferenced** if it is associated with a mathematical transformation between its internal (map coordinate system and a ground system of geographic coordinates. The geographic coordinate system often is provided by naming a standard datum.
+
+A spatial reference system identifier (**SRID**) is typically associated with a string description of the datum, geoid, coordinate system, and map projection.
 
 Orienteering maps, being two-dimensional, encounter height considerations separately from latitude/longitude, etc. Height is generally measured relative to a **geoid**, a standard surface of approximately equal gravitational potential. The geoid is defined relative to a datum’s ellipsoid. As an example, for NAVD88, Geoid 12B (for East Tennessee and its lidar data) is about 30 meters beneath the ellipsoid. **Orthometric height** is the term for height above the geoid. **Ellipsoidal height** arises in simpler 3-D coordinate systems. A **vertical datum** is the reference surface for measuring height, whether geoid or ellipsoid.
 
